@@ -1,0 +1,1 @@
+web: gunicorn chorelist.wsgi --log-file -
