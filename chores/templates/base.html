@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="10" />
+  <meta http-equiv="refresh" content="10000" />
   <meta name="viewport" content="width=500, initial-scale=1">
   <title>{% block title %}My Chore List App{% endblock %}</title>
   <style type="text/css">
@@ -58,16 +58,14 @@
       border: 1px solid orange;
     }
     fieldset{
-      width: 24%;
+      width: 20em;
     }
   </style>
 </head>
 <body>
     <a href="{% url 'index' %}" class="brand">ChoreList</a>
     <hr>
-    <div>
-        {% block primary %}
-        {% endblock %}
-    </div>
+    {% block primary %}
+    {% endblock %}
 </body>
 </html>
