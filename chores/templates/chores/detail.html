@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}ChoreList Details{% endblock %}
+
+{% block primary %}
+
 <h1>{{chorelist}}</h1>
 <p>{{chorelist.due_date}}</p>
 
@@ -24,3 +29,6 @@
 {% else %}
   <p>No Chores are Currently associated with #{{chorelist}}</p>
 {% endif %}
+
+
+{% endblock %}

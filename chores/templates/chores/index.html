@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to ChoreList{% endblock %}
+
+{% block primary %}
+
 {% if chorelists %}
   <ul>
     {% for chorelist in chorelists%}
@@ -10,3 +15,5 @@
 {% endif %}
 
 <a href="/chores/newlist">Create a New List</a>
+
+{% endblock %}
