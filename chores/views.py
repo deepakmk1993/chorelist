@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import ChoreList, Chore
 # from django.template import RequestContext, loader
 
@@ -29,8 +29,8 @@ def choredetail(request, chorelist_id, chore_id):
 def updatechore(request, chorelist_id, chore_id):
     chore = get_object_or_404(Chore, pk=chore_id)
     if 'complete' in request.POST:
-        chore.compete = True
+        chore.complete = True
     else:
-        chore.compete = False
+        chore.complete = False
     chore.save()
     return HttpResponseRedirect('/chores/' + chorelist_id + '/chores/' + chore_id)

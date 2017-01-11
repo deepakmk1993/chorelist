@@ -3,13 +3,12 @@
 
 <form action="/chores/{{chorelist.id}}/chores/{{chore.id}}/update/" method="post">
     {% csrf_token %}
-    <label form="complete">Is Complete</label>
+    <label for="complete">Is Complete</label>
     {% if chore.complete %}
         <input type="checkbox" name="complete" id="complete" checked>
     {% else %}
         <input type="checkbox" name="complete" id="complete">
     {% endif %}
-    <br><br>
     <input type="submit" value="Update">
 </form>
 <p>IsComplete: {{chore.complete}}</p>
