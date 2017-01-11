@@ -4,11 +4,11 @@
 {% block primary %}
 
 <h1>{{chore}}</h1>
-<p>Due Date: {{chore.due_date}}</p>
+<p><b>Due Date:</b> {{chore.due_date}}</p>
 
 <form action="/chores/{{chorelist.id}}/chores/{{chore.id}}/update/" method="post">
     {% csrf_token %}
-    <label for="complete">Is Complete</label>
+    <label for="complete"><b>Is Complete</b></label>
     {% if chore.complete %}
         <input type="checkbox" name="complete" id="complete" checked>
     {% else %}
