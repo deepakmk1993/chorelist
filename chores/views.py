@@ -20,9 +20,17 @@ def detail(request, chorelist_id):
     list = get_object_or_404(ChoreList, pk=chorelist_id)
     return render(request, 'chores/detail.html', { 'chorelist': list })
 
-
 def choredetail(request, chorelist_id, chore_id):
     # return HttpResponse("You're looking at the Chore #%s from ChoreList #%s" % (chore_id, chorelist_id))
     list = get_object_or_404(ChoreList, pk=chorelist_id)
     chore = get_object_or_404(Chore, pk=chore_id)
     return render(request, 'chores/choredetail.html', { 'chorelist': list, 'chore': chore })
+
+def updatechore(request, chorelist_id, chore_id):
+    chore = get_object_or_404(Chore, pk=chore_id)
+    if 'complete' in request.POST:
+        chore.compete = True
+    else:
+        chore.compete = False
+    chore.save()
+    return HttpResponseRedirect('/chores/' + chorelist_id + '/chores/' + chore_id)

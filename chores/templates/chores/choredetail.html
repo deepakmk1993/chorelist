@@ -1,7 +1,7 @@
 <h1>{{chore}}</h1>
 <p>Due Date: {{chore.due_date}}</p>
 
-<form action="" method="post">
+<form action="/chores/{{chorelist.id}}/chores/{{chore.id}}/update/" method="post">
     {% csrf_token %}
     <label form="complete">Is Complete</label>
     {% if chore.complete %}
