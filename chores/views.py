@@ -28,7 +28,9 @@ def detail(request, chorelist_id):
     if request.POST:
         chore = Chore(chore_list_id=chorelist_id, name=request.POST['name'], due_date=request.POST['duedate'])
         chore.save()
-        return HttpResponseRedirect('/chores')
+        # return HttpResponseRedirect('/chores')
+        list = get_object_or_404(ChoreList, pk=chorelist_id)
+        return render(request, 'chores/detail.html', { 'chorelist': list })
     else:
         list = get_object_or_404(ChoreList, pk=chorelist_id)
         return render(request, 'chores/detail.html', { 'chorelist': list })
