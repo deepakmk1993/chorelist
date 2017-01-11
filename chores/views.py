@@ -52,3 +52,8 @@ def deletechore(request, chorelist_id, chore_id):
     chore = get_object_or_404(Chore, pk=chore_id)
     chore.delete()
     return HttpResponseRedirect('/chores/' + chorelist_id)
+
+def deletechorelist(request, chorelist_id):
+    chorelist = get_object_or_404(ChoreList, pk=chorelist_id)
+    chorelist.delete()
+    return HttpResponseRedirect('/chores/')

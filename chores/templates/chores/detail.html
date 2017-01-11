@@ -5,6 +5,7 @@
 
 <h1>{{chorelist}}</h1>
 <p><b>Due Date:</b> {{chorelist.due_date}}</p>
+<a href="/chores/{{chorelist.id}}/delete/">Delete</a>
 
 <form action="/chores/{{chorelist.id}}/" method="post">
     {% csrf_token %}

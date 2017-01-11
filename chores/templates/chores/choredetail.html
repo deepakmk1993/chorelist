@@ -17,10 +17,6 @@
     <br><br>
     <input type="submit" value="Update">
 </form>
-
-<form action="/chores/{{chorelist.id}}/chores/{{chore.id}}/delete/" method="post">
-    {% csrf_token %}
-    
-    <input type="submit" value="Delete">
-</form>
+<br>
+<a href="/chores/{{chorelist.id}}/chores/{{chore.id}}/delete/">Delete</a>
 {% endblock %}
