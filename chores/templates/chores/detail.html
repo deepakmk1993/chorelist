@@ -4,11 +4,12 @@
 {% block primary %}
 
 <h1>{{chorelist}}</h1>
-<p>{{chorelist.due_date}}</p>
+<p>Due Date: {{chorelist.due_date}}</p>
 
 <h2>Create a New Chore</h2>
 <form action="/chores/{{chorelist.id}}/" method="post">
     {% csrf_token %}
+    <fieldset>
     <label for="name">Chore Name</label>
     <input type="textbox" name="name" id="name" placeholder="Enter a Name">
     <br><br>
@@ -16,8 +17,8 @@
     <input type="datetime-local" name="duedate" id="duedate" />
     <br><br>
     <input type="submit" value="Create">
+    </fieldset>
 </form>
-
 
 {% if chorelist.chore_set.all %}
   <ul>

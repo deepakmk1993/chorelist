@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{% block title %}My Chore List App{% endblock %}</title>
   <meta http-equiv="refresh" content="10" />
+  <meta name="viewport" content="width=500, initial-scale=1">
+  <title>{% block title %}My Chore List App{% endblock %}</title>
   <style type="text/css">
     body{
       margin: 0;
@@ -47,14 +48,17 @@
     }
     input{
       padding: 7px 12px;
+      border-radius: 4px;
       border: 1px solid #ccc;
     }
     input[type="submit"]{
       color: white;
       cursor: pointer;
       background: red;
-      border-radius: 4px;
       border: 1px solid orange;
+    }
+    fieldset{
+      width: 25%;
     }
   </style>
 </head>
