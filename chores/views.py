@@ -15,6 +15,14 @@ def index(request):
     lists = ChoreList.objects.all()
     return render(request, 'chores/index.html', { 'chorelists': lists })
 
+def newlist(request):
+    if request.POST:
+        list = ChoreList(name=request.POST['name'], due_date=request.POST['duedate'])
+        list.save()
+        return HttpResponseRedirect('/chores')
+    else:
+        return render(request, 'chores/newlist.html', {})
+
 def detail(request, chorelist_id):
     # return HttpResponse("You're looking at ChoreList #%s" % chorelist_id)
     list = get_object_or_404(ChoreList, pk=chorelist_id)
