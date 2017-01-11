@@ -4,19 +4,19 @@
 {% block primary %}
 
 <h1>{{chorelist}}</h1>
-<p>Due Date: {{chorelist.due_date}}</p>
+<p><b>Due Date:</b> {{chorelist.due_date}}</p>
 
 <form action="/chores/{{chorelist.id}}/" method="post">
     {% csrf_token %}
     <fieldset>
-    <legend><h2>Create a New Chore</h2></legend>
-    <label for="name">Chore Name</label>
-    <input type="textbox" name="name" id="name" placeholder="Enter a Name">
-    <br><br>
-    <label for="duedate">Due Date</label>
-    <input type="datetime-local" name="duedate" id="duedate" />
-    <br><br>
-    <input type="submit" value="Create">
+      <legend><h2>Create a New Chore</h2></legend>
+      <label for="name">Chore Name</label>
+      <input type="textbox" name="name" id="name" placeholder="Enter a Name">
+      <br><br>
+      <label for="duedate">Due Date</label>
+      <input type="datetime-local" name="duedate" id="duedate" />
+      <br><br>
+      <input type="submit" value="Create">
     </fieldset>
 </form>
 
