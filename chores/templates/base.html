@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="refresh" content="10000" />
-  <meta name="viewport" content="width=500, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}My Chore List App{% endblock %}</title>
   <style type="text/css">
     body{
@@ -12,7 +12,7 @@
       font-family: 'Segoe UI Light';
     }
     ul{
-      padding-left: 10px;
+      padding-left: 0px;
     }
     ul li {
       margin-bottom: 4px;
@@ -57,8 +57,18 @@
       background: red;
       border: 1px solid orange;
     }
-    fieldset{
-      width: 20em;
+    form{
+      width: 24em;
+    }
+    
+    @media only screen and (max-width: 415px) {
+      form{
+        width: 18em;
+      }
+      label{
+        display: block;
+        margin-bottom: 4px;
+      }
     }
   </style>
 </head>
